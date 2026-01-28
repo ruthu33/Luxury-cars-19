@@ -1,0 +1,672 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #F9F8F3;
+    background-image: linear-gradient(135deg, #F9F8F3 0%, #F3F2E4 100%);
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #E8E6DA;
+    box-shadow: 0 2px 20px rgba(216, 190, 143, 0.1);
+}
+
+.nav-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section h1 a {
+    color: #8B7355;
+    text-decoration: none;
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo-section h1 a:hover {
+    color: #A67C52;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.navigation a {
+    color: #6D6459;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.navigation a:hover {
+    background-color: #E8E6DA;
+    color: #8B7355;
+}
+
+.navigation a:active {
+    background-color: #D8D1C1;
+}
+
+.section-home {
+    background: linear-gradient(rgba(243, 242, 228, 0.9), rgba(243, 242, 228, 0.95)),
+                url('images/hero-bg.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4A4238;
+    padding: 2rem;
+    position: relative;
+}
+
+.section-home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0 L100,0 L100,100" stroke="%238B7355" stroke-width="0.5" stroke-opacity="0.1"/></svg>');
+    opacity: 0.3;
+}
+
+.home-section {
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 4.2rem;
+    margin-bottom: 1.5rem;
+    color: #8B7355;
+    text-shadow: 2px 2px 4px rgba(139, 115, 85, 0.1);
+    animation: fadeInUp 1s ease;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.para {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+    animation: fadeInUp 1s ease 0.3s both;
+    color: #6D6459;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+}
+
+.button-group {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+.button {
+    padding: 1.1rem 3rem;
+    background-color: #8B7355;
+    color: #F3F2E4;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #8B7355;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.button:hover::before {
+    left: 100%;
+}
+
+.button:hover {
+    background-color: #A67C52;
+    border-color: #A67C52;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 115, 85, 0.2);
+}
+
+.section-about {
+    max-width: 1000px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(216, 190, 143, 0.1);
+    padding: 4rem;
+    border: 1px solid #E8E6DA;
+}
+
+.about-section h2 {
+    font-size: 2.8rem;
+    color: #8B7355;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #D8BE8F;
+}
+
+.about-section p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    color: #5A5248;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.about-section hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #D8BE8F, transparent);
+    margin: 3rem auto;
+    width: 200px;
+}
+
+.info, .who, .Our-Goal {
+    color: #A67C52;
+    margin-top: 4rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.list, .list-website {
+    list-style: none;
+    margin: 2rem 0;
+    padding-left: 0;
+}
+
+.list li, .list-website li {
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    color: #5A5248;
+    padding-left: 2rem;
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.list li:before, .list-website li:before {
+    content: "→";
+    color: #D8BE8F;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.list li:hover:before, .list-website li:hover:before {
+    transform: translateX(5px);
+}
+
+.data, .para-data, .goal {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #6D6459;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(232, 230, 218, 0.3);
+    border-left: 4px solid #D8BE8F;
+    margin: 2.5rem 0;
+    border-radius: 0 10px 10px 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Cars Section */
+.cars-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.head-cars {
+    font-size: 3.2rem;
+    text-align: center;
+    color: #8B7355;
+    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.head-cars::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #D8BE8F, transparent);
+}
+
+.description {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #6D6459;
+    margin-bottom: 5rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.car-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(216, 190, 143, 0.15);
+    transition: all 0.4s ease;
+    border: 1px solid #E8E6DA;
+    position: relative;
+}
+
+.car-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(216, 190, 143, 0.25);
+}
+
+.car-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.car-card:nth-child(even)::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D8BE8F"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') center/contain no-repeat;
+    opacity: 0.3;
+}
+
+.car-card:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D8BE8F"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') center/contain no-repeat;
+    opacity: 0.3;
+}
+
+.car-image {
+    flex: 1;
+    padding: 3rem;
+    text-align: center;
+    background: linear-gradient(135deg, #F3F2E4 0%, #E8E6DA 100%);
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,50 Q50,0 100,50 Q50,100 0,50" fill="%238B7355" fill-opacity="0.03"/></svg>');
+    pointer-events: none;
+}
+
+.car-image img {
+    max-width: 100%;
+    height: 280px;
+    object-fit: contain;
+    transition: transform 0.7s ease;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+.car-card:hover .car-image img {
+    transform: scale(1.08) rotateY(5deg);
+}
+
+.car-name {
+    font-size: 2.8rem;
+    color: #8B7355;
+    margin-top: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.car-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #D8BE8F, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover .car-name::after {
+    transform: scaleX(1);
+}
+
+.car-description {
+    flex: 1;
+    padding: 4rem;
+}
+
+.description-data {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #5A5248;
+    text-align: justify;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid #E8E6DA;
+}
+
+.footer-section {
+    background: linear-gradient(135deg, #8B7355 0%, #6D6459 100%);
+    color: #F3F2E4;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23F3F2E4" fill-opacity="0.1"/></svg>');
+    animation: twinkle 20s linear infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.1; }
+}
+
+.contact-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-title {
+    font-size: 3.5rem;
+    color: #F3F2E4;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.contact-details h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: #E8E6DA;
+    font-weight: 400;
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-details h3::before {
+    content: "•";
+    color: #D8BE8F;
+    font-size: 1.5rem;
+}
+
+.social-links {
+    margin: 4rem 0;
+}
+
+.social-links p {
+    font-size: 1.2rem;
+    color: #D8BE8F;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.copyright {
+    font-size: 0.95rem;
+    color: #B8B0A3;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(216, 190, 143, 0.3);
+    font-family: 'Cormorant Garamond', serif;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1100px) {
+    .car-card {
+        flex-direction: column !important;
+        margin-bottom: 6rem;
+    }
+    
+    .car-image, .car-description {
+        padding: 2rem;
+    }
+    
+    .car-image {
+        min-height: 350px;
+    }
+    
+    .car-image img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-section {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .navigation ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .title {
+        font-size: 3rem;
+    }
+    
+    .para {
+        font-size: 1.3rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .section-about {
+        padding: 3rem 2rem;
+        margin: 4rem auto;
+    }
+    
+    .about-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .head-cars {
+        font-size: 2.5rem;
+    }
+    
+    .car-name {
+        font-size: 2.2rem;
+    }
+    
+    .contact-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .para {
+        font-size: 1.1rem;
+    }
+    
+    .button {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .section-about {
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .car-image img {
+        height: 200px;
+    }
+    
+    .car-name {
+        font-size: 1.8rem;
+    }
+    
+    .contact-title {
+        font-size: 2rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: #D8BE8F;
+    color: #333333;
+}
+
+::-moz-selection {
+    background-color: #D8BE8F;
+    color: #333333;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F3F2E4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D8BE8F;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A67C52;
+}
+
+.car-image img {
+    opacity: 0;
+    animation: fadeInImage 0.8s ease forwards;
+}
+
+@keyframes fadeInImage {
+    to {
+        opacity: 1;
+    }
+}
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+    line-height: 1.3;
+}
